@@ -1,0 +1,10 @@
+{
+  "themes": [
+    {
+      "name": "main-theme",
+      "types": [
+        "admin"
+      ]
+    }
+  ]
+}

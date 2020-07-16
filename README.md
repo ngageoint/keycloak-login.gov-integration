@@ -10,3 +10,11 @@ If you'd like to contribute to this project, please make a pull request. We'll r
 Keycloak is open sourced under the Apache 2.0 license. 
 
 https://github.com/keycloak/keycloak
+# Keycloak-Login_gov-IdentityProvider
+
+Keycloak Login.gov Identity Provider Implementation
+
+In addition to configuring the generic OIDC properties you will need to set the 
+`Authentication Context Class (acr_value)` to either:
+ * LOA1 :  Self-Asserted - (NIST 800-63-3) Identity Assurance Level l (IAL) (default)
+ * LOA3 :  Proofed  - (NIST 800-63-3) Identity Assurance Level 2 (IAL)
