@@ -8,27 +8,47 @@ After configuring this plugin the standard Keycloak Browser Flow will show the "
 ![login form](img/login_with_login_gov.PNG)
 
 
+## Build and Install
+Compile the Keycloak login.gov plugin src by running: 
+
+```bash
+mvn clean package
+```
+
+### Running with Keycloak on Host OS
+
+Drop the `target/login_gov-<VERSION>.jar` jar file in the `keycloak-<VERSION>\standalone\deployments` directory.  
+You may have to restart the Keycloak server for UI updates to take effect.
+
+### Running Keycloak with Docker
+
+To build a Docker Image with the login.gov plugin, from the project root directory run:
+
+```bash
+docker build -t kc:10.0.2 .
+docker run -dt --name dev-keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 kc:10.0.2
+```
+
+Check here for additional info on  [Docker Keycloak](https://hub.docker.com/r/jboss/keycloak/) 
+
+
 ## Configuration
-Users will need to configure a Keycloak Identity Provider as well as OIDC client configuration in login.gov.
+You will need to configure a Keycloak Identity Provider as well as OIDC client configuration in login.gov.
 
 ### Keycloak
 
- 1. Compile the plugin src by running ```mvn clean package```
-
- 2. Drop the ```login_gov-<VERSION>.jar``` file in the ```keycloak-<VERSION>\standalone\deployments``` directory
-
- 3. Create or choose a target Keycloak realm and click the `Identity Providers` tab, click the `Add provider...` option and select `Login.gov`
+ 1. Create or choose a target Keycloak realm and click the `Identity Providers` tab, click the `Add provider...` option and select `Login.gov`
 ![login_gov_provider](img/create_identity_provider.PNG)
 
- 4. At the bottom of the page paste the login.gov oidc well-known URI and `Import`
+ 2. At the bottom of the page paste the login.gov oidc well-known URI and `Import`
  ![well-known](img/import_well-known.PNG)
 
- 5. Continue to configure the Identity Provider properties for `Client Authentication` and `Client ID` as follows.
+ 3. Continue to configure the Identity Provider properties for `Client Authentication` and `Client ID` as follows.
 ![conf_client](img/idp_conf_client.PNG)
 `Default Scopes` and `Authentication Context Class`
 ![conf_scope_acr](img/idp_conf_scope_acr.PNG)
 
- 6. Click `save` at the bottom
+ 4. Click `save` at the bottom
  
 ### login.gov
 See configuration docs for [login.gov](https://developers.login.gov/oidc/) oidc clients.
