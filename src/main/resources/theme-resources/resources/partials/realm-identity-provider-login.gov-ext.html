@@ -1,0 +1,13 @@
+<div class="form-group" clearfix>
+    <label class="col-md-2 control-label" for="acrValues">{{:: 'login_gov.acr_values' | translate}}</label>
+    <div class="col-md-6">
+        <div>
+            <select class="form-control" id="acrValues" ng-model="identityProvider.config.acr_values">
+                <option value="loa1">{{:: 'login_gov.acr_values.loa1' | translate}}</option>
+                <option value="loa3">{{:: 'login_gov.acr_values.loa3' | translate}}</option>
+            </select>
+        </div>
+    </div>
+    <kc-tooltip>{{:: 'login_gov.acr_values.tooltip' | translate}}</kc-tooltip>
+</div>
+

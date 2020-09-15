@@ -22,7 +22,7 @@
             <div class="form-group clearfix">
                 <label class="col-md-2 control-label" for="identifier"><span class="required">*</span> {{:: 'alias' | translate}}</label>
                 <div class="col-md-6">
-                    <input class="form-control" id="identifier" type="text" ng-model="identityProvider.alias" data-ng-readonly="!newIdentityProvider" required>
+                    <input kc-no-reserved-chars class="form-control" id="identifier" type="text" ng-model="identityProvider.alias" data-ng-readonly="!newIdentityProvider" required>
                 </div>
                 <kc-tooltip>{{:: 'identity-provider.alias.tooltip' | translate}}</kc-tooltip>
             </div>
@@ -225,7 +225,6 @@
                 </div>
                 <kc-tooltip>{{:: 'identity-provider.default-scopes.tooltip' | translate}}</kc-tooltip>
             </div>
-
             <div class="form-group">
                 <label class="col-md-2 control-label" for="prompt">{{:: 'prompt' | translate}}</label>
                 <div class="col-md-6">
@@ -242,24 +241,13 @@
                 <kc-tooltip>{{:: 'prompt.tooltip' | translate}}</kc-tooltip>
             </div>
             <div class="form-group">
-                <label class="col-md-2 control-label" for="acrValues">{{:: 'login_gov.acr_values' | translate}}</label>
-                <div class="col-md-6">
-                    <div>
-                        <select class="form-control" id="acrValues" ng-model="identityProvider.config.acr_values">
-                            <option value="loa1">{{:: 'login_gov.acr_values.loa1' | translate}}</option>
-                            <option value="loa3">{{:: 'login_gov.acr_values.loa3' | translate}}</option>
-                        </select>
-                    </div>
-                </div>
-                <kc-tooltip>{{:: 'login_gov.acr_values.tooltip' | translate}}</kc-tooltip>
-            </div>
-            <div class="form-group">
                 <label class="col-md-2 control-label" for="acceptsPromptNoneForwardFromClient">{{:: 'accepts-prompt-none-forward-from-client' | translate}}</label>
                 <div class="col-md-6">
                     <input ng-model="identityProvider.config.acceptsPromptNoneForwardFromClient" id="acceptsPromptNoneForwardFromClient" onoffswitchvalue on-text="{{:: 'onText' | translate}}" off-text="{{:: 'offText' | translate}}" />
                 </div>
                 <kc-tooltip>{{:: 'accepts-prompt-none-forward-from-client.tooltip' | translate}}</kc-tooltip>
             </div>
+            <div data-ng-include data-src="resourceUrl + '/partials/realm-identity-provider-' + identityProvider.providerId + '-ext.html'"></div>
             <div class="form-group">
                 <label class="col-md-2 control-label" for="validateSignature">{{:: 'validate-signatures' | translate}}</label>
                 <div class="col-md-6">
@@ -289,7 +277,7 @@
                 <div class="form-group clearfix" data-ng-hide="identityProvider.config.useJwksUrl == 'true'">
                     <label class="col-md-2 control-label" for="publicKeySignatureVerifierKey">{{:: 'validating-public-key' | translate}}</label>
                     <div class="col-md-6">
-                        <textarea class="form-control" id="publicKeySignatureVerifier" ng-model="identityProvider.config.publicKeySignatureVerifier"/>
+                        <textarea class="form-control" id="publicKeySignatureVerifier" ng-model="identityProvider.config.publicKeySignatureVerifier"></textarea>
                     </div>
                     <kc-tooltip>{{:: 'identity-provider.validating-public-key.tooltip' | translate}}</kc-tooltip>
                 </div>
@@ -342,7 +330,7 @@
                         <label for="import-file" class="btn btn-default">{{:: 'select-file' | translate}} <i class="pficon pficon-import"></i></label>
                         <input id="import-file" type="file" class="hidden" ng-file-select="onFileSelect($files)">
                     </div>
-                <span class="kc-uploaded-file" data-ng-show="files.length > 0">
+                    <span class="kc-uploaded-file" data-ng-show="files.length > 0">
                     {{files[0].name}}
                 </span>
                 </div>

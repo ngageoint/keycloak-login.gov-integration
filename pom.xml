@@ -7,7 +7,7 @@
 
     <groupId>mil.nga.keycloak.social</groupId>
     <artifactId>login_gov</artifactId>
-    <version>10.0.2-SNAPSHOT</version>
+    <version>11.0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -18,7 +18,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <keycloak.version>10.0.2</keycloak.version>
+        <keycloak.version>11.0.2</keycloak.version>
         <jboss.logging.version>3.4.1.Final</jboss.logging.version>
         <wildfly.plugin.version>2.0.0.Final</wildfly.plugin.version>
     </properties>
