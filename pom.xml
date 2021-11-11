@@ -7,7 +7,7 @@
 
     <groupId>mil.nga.keycloak.social</groupId>
     <artifactId>login_gov</artifactId>
-    <version>11.0.2-SNAPSHOT</version>
+    <version>11.0.2</version>
 
     <packaging>jar</packaging>
 
@@ -83,24 +83,9 @@
 
     <repositories>
         <repository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.devops.geointservices.io/api/v4/groups/4842/-/packages/maven</url>
-        </repository>
-        <repository>
             <id>central</id>
-            <!--<url>https://nexus.devops.geointservices.io/content/repositories/central/</url>-->
             <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.devops.geointservices.io/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
-        </repository>
-        <snapshotRepository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.devops.geointservices.io/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
