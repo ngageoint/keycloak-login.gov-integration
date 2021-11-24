@@ -7,7 +7,7 @@
 
     <groupId>mil.nga.keycloak.social</groupId>
     <artifactId>login_gov</artifactId>
-    <version>12.0.4-SNAPSHOT</version>
+    <version>12.0.4</version>
 
     <packaging>jar</packaging>
 
