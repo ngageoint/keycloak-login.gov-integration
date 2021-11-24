@@ -8,7 +8,7 @@ After configuring this plugin the standard Keycloak Browser Flow will show the "
 ![login form](img/login_with_login_gov.PNG)
 
 ## Compatability
-Login.gov and Keycloak 8, 9, 10, 11, 12
+Login.gov and Keycloak 8, 9, 10, 11, 12, 15
 
 
 ## Build and Install
@@ -28,8 +28,8 @@ You may have to restart the Keycloak server for UI updates to take effect.
 To build a Docker Image with the login.gov plugin, from the project root directory run:
 
 ```bash
-docker build -t keycloak:12.0.4 .
-docker run -dt --name dev-keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 keycloak:12.0.4
+docker build -t keycloak:15.0.2 .
+docker run -dt --name dev-keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8080:8080 keycloak:15.0.2
 ```
 
 Check here for additional info on  [Docker Keycloak](https://hub.docker.com/r/jboss/keycloak/) 
