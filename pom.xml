@@ -7,18 +7,16 @@
 
     <groupId>mil.nga.keycloak.social</groupId>
     <artifactId>login_gov</artifactId>
-    <version>11.0.2</version>
+    <version>12.0.4-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
     <properties>
-        <keycloak.gitlab.groupid>4114</keycloak.gitlab.groupid>
-
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <keycloak.version>11.0.2</keycloak.version>
+        <keycloak.version>12.0.4</keycloak.version>
         <jboss.logging.version>3.4.1.Final</jboss.logging.version>
         <wildfly.plugin.version>2.0.0.Final</wildfly.plugin.version>
     </properties>
@@ -82,6 +80,7 @@
     </build>
 
     <repositories>
+
         <repository>
             <id>central</id>
             <url>https://repo1.maven.org/maven2/</url>
